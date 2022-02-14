@@ -1,14 +1,10 @@
-// 0. set global variables // Bryan's comment #1: good job on getting the global variables out. Naming is very important and you did well.
+// 0. set global variables 
 // track games won
 var numGamesPlayed = 0;
 // track games lost
 var numGamesWon = 0;
-// track the frequency of each scissors paper stone showing
-var scissors = 0;
-var paper = 0;
-var stone = 0;
 
-// 1. computer randomly generates values and we define numbers to words // Bryan's comment #2: this function is written well, and the naming is good. Showing you understand what needs to be done!
+// 1. computer randomly generates values and we define numbers to words
 var getComputerChoice = function () {
   var randomDecimal = Math.random() * 3; // returns from 0.00001 to 0.99999; then * 3 = 0.00003 to 2.88888
   var randomInteger = Math.floor(randomDecimal); // rounds down with numbers: 0, 1, 2
@@ -21,9 +17,9 @@ var getComputerChoice = function () {
     return "Paper";
   }
   return computerChoice;
-}; // <-- Correction #1 you did not put the closing curly brace here and it caused the rest of the code to stop running (don't know if this was intentional)
+}; // MAKE SURE TO CLOSE CURLY BRACKETS!!! 
 
-// calculate how many times the user wins / total number of games played -- try putting it in main output
+// calculate how many times the user wins / total number of games played -- (Note to viewer: i commented this out b/c for some reason, putting it here did not work!)
 // var getWinRateInfo = function () {
 //   var winRate = Math.floor(numGamesWon / numGamesPlayed) * 100;
 //   return "You win " + winRate + "% of the time! ";
@@ -33,7 +29,6 @@ var getComputerChoice = function () {
 var main = function (input) {
   var myOutputValue = "";
 
-  // Bryan's comments #3: Good job on validating your inputs!
   if (input == "") {
     return "Hello friend, let's play!"; // we use "return" instead of "myoutputvalue" bc i noticed that line 56 will overwrite it
   }
@@ -50,7 +45,7 @@ var main = function (input) {
 
   if (input == computer) {
     numGamesPlayed = numGamesPlayed + 1;
-    // numGamesWon = numGamesWon + 1; // Bryan's comment #5 I commented out this line and line 103 cos they were letting you gain more win score when you tied or lost.
+    // numGamesWon = numGamesWon + 1; // Bryan commented out this line and line 103 cos they were letting you gain more win score when you tied or lost. 
     myOutputValue =
       "Computer chose: " +
       computer +
